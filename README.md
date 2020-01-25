@@ -1,6 +1,6 @@
-# @diegoh/template-nodejs
+# @diegoh/api-middleware-request-logger
 
-![](https://github.com/diegoh/template-nodejs/workflows/Test/badge.svg) ![](https://github.com/diegoh/template-nodejs/workflows/Security/badge.svg) ![](https://github.com/diegoh/template-nodejs/workflows/Publish/badge.svg)
+![](https://github.com/diegoh/api-middleware-request-logger/workflows/Test/badge.svg) ![](https://github.com/diegoh/api-middleware-request-logger/workflows/Security/badge.svg) ![](https://github.com/diegoh/api-middleware-request-logger/workflows/Publish/badge.svg)
 
 Starter project for node projects
 

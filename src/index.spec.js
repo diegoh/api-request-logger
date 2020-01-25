@@ -1,11 +1,11 @@
 const assert = require('assert');
-const example = require('./index');
+const middleware = require('./index');
 
 describe('src/index', () => {
-  it('exports an init function', () => {
-    assert.strictEqual(typeof example, 'function');
+  it('exports a function', () => {
+    assert.strictEqual(typeof middleware, 'function');
   });
-  it('returns true', () => {
-    assert.strictEqual(example(), true);
+  it('returns middleware', () => {
+    assert.strictEqual(typeof middleware(() => {}), 'function');
   });
 });
