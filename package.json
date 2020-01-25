@@ -1,0 +1,32 @@
+{
+  "name": "@diegoh/template-nodejs",
+  "version": "1.2.0",
+  "description": "Template project for node projects",
+  "main": "./src/index.js",
+  "scripts": {
+    "test:unit": "NODE_ENV=test mocha --exit 'src/**/*.spec.js'",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "test:coverage": "nyc npm run test:unit",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegoh/template-nodejs.git"
+  },
+  "author": "Diego Herrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegoh/template-nodejs/issues"
+  },
+  "homepage": "https://github.com/diegoh/template-nodejs#readme",
+  "devDependencies": {
+    "@diegoh/eslint-config-node": "^1.0.0",
+    "husky": "^3.1.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "nyc": "^14.1.1",
+    "testdouble": "^3.12.4"
+  },
+  "dependencies": {}
+}
