@@ -2,9 +2,11 @@
 
 ![](https://github.com/diegoh/api-middleware-request-logger/workflows/Test/badge.svg) ![](https://github.com/diegoh/api-middleware-request-logger/workflows/Security/badge.svg) ![](https://github.com/diegoh/api-middleware-request-logger/workflows/Publish/badge.svg)
 
+Logs requests using the provided logger.
+
 ## Usage
 
-This module requires a logger with `error` and `info` methods to log http requests.
+This module requires a logger with `error` and `info` methods.
 
 ### Example
 
