@@ -1,24 +1,23 @@
-# @diegoh/api-middleware-request-logger
+# @diegoh/api-request-logger
 
-![](https://github.com/diegoh/api-middleware-request-logger/workflows/Test/badge.svg) ![](https://github.com/diegoh/api-middleware-request-logger/workflows/Security/badge.svg) ![](https://github.com/diegoh/api-middleware-request-logger/workflows/Publish/badge.svg)
+![](https://github.com/diegoh/api-request-logger/workflows/Test/badge.svg) ![](https://github.com/diegoh/api-request-logger/workflows/Security/badge.svg) ![](https://github.com/diegoh/api-request-logger/workflows/Publish/badge.svg)
 
 Logs requests using the provided logger.
 
 ## Usage
 
-This module requires a logger with `error` and `info` methods.
+Initialise the module by providing a logger with `error` and `info` methods.
+
+To log a request pass a `koa` ctx object as a parameter after initialisation.
 
 ### Example
 
 ```js
-const Koa = require('koa');
 const myLogger = require('./logger');
-const requestLogger = require('@diegoh/api-middleware-request-logger');
-const requestLoggerMiddleware = requestLogger(myLogger);
+const setupRequestLogger = require('@diegoh/api-request-logger');
+const logRequest = setupRequestLogger(myLogger);
 
-const app = new Koa();
-
-app.use(requestLoggerMiddleware);
+logRequest(ctx);
 ```
 
 ## Development
