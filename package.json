@@ -1,7 +1,7 @@
 {
-  "name": "@diegoh/template-nodejs",
-  "version": "1.2.0",
-  "description": "Template project for node projects",
+  "name": "@diegoh/api-request-logger",
+  "version": "1.0.0",
+  "description": "Helper for logging API requests",
   "main": "./src/index.js",
   "scripts": {
     "test:unit": "NODE_ENV=test mocha --exit 'src/**/*.spec.js'",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diegoh/template-nodejs.git"
+    "url": "git+https://github.com/diegoh/api-request-logger.git"
   },
   "author": "Diego Herrera",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/diegoh/template-nodejs/issues"
+    "url": "https://github.com/diegoh/api-request-logger/issues"
   },
-  "homepage": "https://github.com/diegoh/template-nodejs#readme",
+  "homepage": "https://github.com/diegoh/api-request-logger#readme",
   "devDependencies": {
     "@diegoh/eslint-config-node": "^1.0.0",
     "husky": "^3.1.0",

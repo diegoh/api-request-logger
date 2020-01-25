@@ -1,11 +1,12 @@
 const assert = require('assert');
-const example = require('./index');
+const setup = require('./index');
 
 describe('src/index', () => {
-  it('exports an init function', () => {
-    assert.strictEqual(typeof example, 'function');
+  it('exports a function', () => {
+    assert.strictEqual(typeof setup, 'function');
   });
-  it('returns true', () => {
-    assert.strictEqual(example(), true);
+  it('returns setup', () => {
+    const logger = setup(() => {});
+    assert.strictEqual(typeof logger, 'function');
   });
 });
