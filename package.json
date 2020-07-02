@@ -2,8 +2,9 @@
   "name": "@diegoh/api-request-logger",
   "version": "1.0.0",
   "description": "Helper for logging API requests",
-  "main": "./src/index.js",
   "prettier": "@diegoh/eslint-config-prettier-typescript-node/src/prettier.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "test:unit": "NODE_ENV=test jest --testPathPattern src",
@@ -33,7 +34,7 @@
     "@types/node": "^13.13.5",
     "@shopify/jest-koa-mocks": "^2.2.2",
     "husky": "^3.1.0",
-    "jest": "^25.5.4",
+    "jest": "^26.1.0",
     "ts-jest": "^25.5.0",
     "typescript": "^3.8.3"
   },
