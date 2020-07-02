@@ -1,42 +1,43 @@
 {
-  "name": "@diegoh/template-nodejs",
-  "version": "1.2.0",
-  "description": "Template project for node projects",
+  "name": "@diegoh/api-request-logger",
+  "version": "1.0.0",
+  "description": "Helper for logging API requests",
   "main": "./src/index.js",
+  "prettier": "@diegoh/eslint-config-prettier-typescript-node/src/prettier.js",
   "scripts": {
     "test": "jest",
     "test:unit": "NODE_ENV=test jest --testPathPattern src",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:coverage": "npm run test:unit -- --coverage",
-    "lint": "eslint **/*.ts",
-    "lint:fix": "eslint **/*.ts --fix",
+    "lint": "eslint . --ext ts",
+    "lint:fix": "eslint . --ext ts --fix",
     "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diegoh/template-nodejs.git"
+    "url": "git+https://github.com/diegoh/api-request-logger.git"
   },
   "author": "Diego Herrera",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/diegoh/template-nodejs/issues"
+    "url": "https://github.com/diegoh/api-request-logger/issues"
   },
-  "homepage": "https://github.com/diegoh/template-nodejs#readme",
+  "homepage": "https://github.com/diegoh/api-request-logger#readme",
   "devDependencies": {
     "@diegoh/eslint-config-prettier-typescript-node": "^1.1.0",
+    "eslint": "^6.8.0",
+    "prettier": "^2.0.5",
     "@diegoh/tsconfig": "^1.0.5",
     "@types/jest": "^25.2.1",
+    "@types/koa": "^2.11.3",
     "@types/node": "^13.13.5",
+    "@shopify/jest-koa-mocks": "^2.2.2",
     "husky": "^3.1.0",
-    "mocha": "^6.2.2",
-    "nodemon": "^1.19.4",
-    "nyc": "^14.1.1",
-    "testdouble": "^3.12.4",
     "jest": "^25.5.4",
     "ts-jest": "^25.5.0",
-    "ts-node": "^8.10.1",
-    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "koa": "^2.13.0"
+  }
 }
