@@ -4,11 +4,13 @@
   "description": "Template project for node projects",
   "main": "./src/index.js",
   "scripts": {
-    "test:unit": "NODE_ENV=test mocha --exit 'src/**/*.spec.js'",
+    "test": "jest",
+    "test:unit": "NODE_ENV=test jest --testPathPattern src",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test:coverage": "nyc npm run test:unit",
-    "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "test:coverage": "npm run test:unit -- --coverage",
+    "lint": "eslint **/*.ts",
+    "lint:fix": "eslint **/*.ts --fix",
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,12 +23,20 @@
   },
   "homepage": "https://github.com/diegoh/template-nodejs#readme",
   "devDependencies": {
-    "@diegoh/eslint-config-node": "^1.0.0",
+    "@diegoh/eslint-config-prettier-typescript-node": "^1.1.0",
+    "@diegoh/tsconfig": "^1.0.5",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.5",
     "husky": "^3.1.0",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
     "nyc": "^14.1.1",
-    "testdouble": "^3.12.4"
+    "testdouble": "^3.12.4",
+    "jest": "^25.5.4",
+    "ts-jest": "^25.5.0",
+    "ts-node": "^8.10.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
   },
   "dependencies": {}
 }
