@@ -1,6 +1,6 @@
 {
   "name": "@diegoh/api-request-logger",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Helper for logging API requests",
   "prettier": "@diegoh/eslint-config-prettier-typescript-node/src/prettier.js",
   "main": "dist/index.js",
