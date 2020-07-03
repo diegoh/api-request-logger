@@ -38,22 +38,19 @@ describe('src/payload.class', () => {
   );
 
   describe('sets the expected properties', () => {
-    it('sets the expected method property', () => {
+    it('sets the expected properties', () => {
       expect(payload).toHaveProperty('method');
-      expect(payload.method).toStrictEqual(ctx.request.method);
-    });
-    it('sets the expected url property', () => {
       expect(payload).toHaveProperty('url');
-      expect(payload.url).toStrictEqual(ctx.request.url);
-    });
-    it('sets the expected status property', () => {
       expect(payload).toHaveProperty('status');
-      expect(payload.status).toStrictEqual(ctx.response.status);
-    });
-    it('sets the expected statusText property', () => {
       expect(payload).toHaveProperty('statusText');
+    });
+    it('assigns the expected values', () => {
+      expect(payload.method).toStrictEqual(ctx.request.method);
+      expect(payload.url).toStrictEqual(ctx.request.url);
+      expect(payload.status).toStrictEqual(ctx.response.status);
       expect(payload.statusText).toStrictEqual(ctx.response.message);
     });
+
     describe('exclusions', () => {
       it('does not set a responseTime property', () => {
         expect(payload).not.toHaveProperty('responseMessage');
