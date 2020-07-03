@@ -2,7 +2,7 @@ name: Publish
 on:
   push:
     branches:
-      - create-github-release
+      - master
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.package-version.outputs.current-version}}
           release_name: Release ${{ steps.package-version.outputs.current-version}}
