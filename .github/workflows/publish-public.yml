@@ -1,11 +1,12 @@
-name: Publish
+name: Publish NPM - PUBLIC
+
 on:
   push:
     branches:
       - master
 
 jobs:
-  release:
+  npm:
     runs-on: ubuntu-latest
 
     strategy:
@@ -28,7 +29,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: publish npm package
-        run: npm publish
+      - name: publish npm (PUBLIC)
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,8 +1,10 @@
 # @diegoh/api-request-logger
 
-![](https://github.com/diegoh/api-request-logger/workflows/Test/badge.svg) ![](https://github.com/diegoh/api-request-logger/workflows/Security/badge.svg) ![](https://github.com/diegoh/api-request-logger/workflows/Publish/badge.svg)
+![Build](https://github.com/diegoh/api-request-logger/workflows/Build/badge.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Package Version](https://img.shields.io/npm/v/@diegoh/api-request-logger)
 
-Logs requests using the provided logger.
+Koa middleware to log requests using the provided logger.
 
 ## Usage
 
@@ -37,7 +39,7 @@ logRequest(ctx);
 
 ### Lint
 
-`npm run lint` or `npm run lint-fix` to automatically fix any linting issues.
+`npm run lint` or `npm run lint:fix` to automatically fix any linting issues.
 
 ### CI/CD
 
