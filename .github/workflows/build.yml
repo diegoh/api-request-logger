@@ -1,8 +1,9 @@
-name: Test
+name: Build
+
 on:
-  pull_request:
-    branches:
-      - master
+  push:
+    branches-ignore:
+      - 'master'
 
 jobs:
   build:
@@ -10,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12, 13]
+        node-version: [12, 14]
 
     steps:
       - uses: actions/checkout@v1
@@ -20,7 +21,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
-          scope: '@diegoh'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -44,3 +44,6 @@ jobs:
 
       - name: test:coverage
         run: npm run test:coverage
+
+      - name: audit
+        run: npm audit --production --registry=https://registry.npmjs.org

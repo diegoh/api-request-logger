@@ -66,4 +66,4 @@ test/.coverage
 test/coverage
 .DS_Store
 
-gcloud-service-key.json
+dist
