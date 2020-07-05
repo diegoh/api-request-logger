@@ -1,6 +1,6 @@
 {
   "name": "@diegoh/api-request-logger",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Koa middleware to log requests using the provided logger",
   "prettier": "@diegoh/eslint-config-prettier-typescript-node/src/prettier.js",
   "main": "dist/index.js",
