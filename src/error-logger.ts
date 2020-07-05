@@ -2,7 +2,7 @@ import { DefaultContext } from 'koa';
 import ErrorLog from './models/error-log.class';
 import Logger from './models/logger.interface';
 
-export default (logger: Logger) => async (
+export const errorLogger = (logger: Logger) => async (
   ctx: DefaultContext,
   error?: Error
 ): Promise<void> => {

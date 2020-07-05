@@ -1,2 +1,2 @@
-export * as errorLogger from './error-logger';
-export * as requestLogger from './request-logger';
+export { errorLogger } from './error-logger';
+export { requestLogger } from './request-logger';

@@ -2,7 +2,7 @@ import { createMockContext } from '@shopify/jest-koa-mocks';
 import { DefaultContext } from 'koa';
 import InfoLog from './models/info-log.class';
 import Logger from './models/logger.interface';
-import setup from './request-logger';
+import { requestLogger } from './request-logger';
 
 describe('src/request-logger', () => {
   const ctx: DefaultContext = createMockContext();
@@ -10,7 +10,7 @@ describe('src/request-logger', () => {
   ctx.message = 'OK';
 
   const logger: Logger = { error: jest.fn(), info: jest.fn() };
-  const middleware = setup(logger);
+  const middleware = requestLogger(logger);
   const next = jest.fn();
 
   beforeEach(() => {

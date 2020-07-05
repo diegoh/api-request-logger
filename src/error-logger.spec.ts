@@ -1,6 +1,6 @@
 import { createMockContext } from '@shopify/jest-koa-mocks';
 import { DefaultContext } from 'koa';
-import setup from './error-logger';
+import { errorLogger } from './error-logger';
 import ErrorLog from './models/error-log.class';
 import Logger from './models/logger.interface';
 
@@ -10,7 +10,7 @@ describe('src/error-logger', () => {
   ctx.message = 'Internal Server Error';
 
   const logger: Logger = { error: jest.fn(), info: jest.fn() };
-  const middleware = setup(logger);
+  const middleware = errorLogger(logger);
   const error = new Error('ERR!!');
 
   beforeEach(() => {
