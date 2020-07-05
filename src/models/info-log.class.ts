@@ -1,7 +1,7 @@
-import { format } from 'util';
 import { DefaultContext } from 'koa';
+import Log from './log.interface';
 
-export default class Payload {
+export default class InfoLog implements Log {
   method: string;
 
   url: string;
@@ -12,24 +12,15 @@ export default class Payload {
 
   responseTime?: string;
 
-  error?: string;
-
-  errorMessage?: string;
-
-  constructor(ctx: DefaultContext, error?: Error) {
+  constructor(ctx: DefaultContext) {
     this.method = ctx.request.method;
     this.url = ctx.request.url;
     this.status = Number.parseInt(ctx.response.status, 10);
     this.statusText = ctx.response.message;
 
-    const responseTime = ctx.get('X-Response-Time');
+    const responseTime = ctx.request.get('X-Response-Time');
     if (responseTime) {
       this.responseTime = `${responseTime}ms`;
-    }
-
-    if (error) {
-      this.error = format(error);
-      this.errorMessage = error.message;
     }
   }
 
@@ -39,7 +30,6 @@ export default class Payload {
       this.url,
       this.status,
       this.statusText,
-      this.errorMessage,
       this.responseTime
     ]
       .filter((item) => !!item)
@@ -48,7 +38,6 @@ export default class Payload {
 
   get json(): string {
     const output = { ...this };
-    delete output.errorMessage;
 
     return JSON.stringify(output);
   }
